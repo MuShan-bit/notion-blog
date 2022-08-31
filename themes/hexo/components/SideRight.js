@@ -47,18 +47,6 @@ export default function SideRight(props) {
 
       {BLOG.COMMENT_WALINE_SERVER_URL && BLOG.COMMENT_WALINE_RECENT && <HexoRecentComments/>}
 
-      <div id="sakana-widget">
-      </div>
-      <script>
-        function initSakanaWidget() {
-          new SakanaWidget().mount('.sakana-widget');
-        }
-      </script>
-      <script
-        async
-        onload="initSakanaWidget()"
-        src="https://cdn.jsdelivr.net/npm/sakana-widget@2.2.1/lib/sakana.min.js"
-      ></script>
       <div className='sticky top-20'>
         {post && post.toc && post.toc.length > 1 && <Card>
           <Catalog toc={post.toc} />
