@@ -61,7 +61,7 @@ export default function SideRight(props) {
         </Card>}
         {slot}
       </div>
-       // 添加Sakana
+       
       <div id="sakana-widget"></div>
     </div>
   )
