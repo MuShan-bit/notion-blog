@@ -5,8 +5,6 @@ export default function Sakana() {
   if (!BLOG.SAKANA_WIDGET) {
     return <></>
   }
-
-  new SakanaWidget().mount('#sakana-widget');
   return <div id="sakana-widget"></div>
 }
 
@@ -14,5 +12,11 @@ export default function Sakana() {
  * 加载部件
  */
 function initSakana() {
-  loadExternalResource('https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/live2d.min.js', 'js');
+  let sakana = document.createElement('script')
+  sakana.src = 'https://cdn.jsdelivr.net/npm/sakana-widget@2.2.1/lib/sakana.min.js'
+  document.head.appendChild(sakana)
+  sakana.async
+  sakana.onload = function(){
+    new SakanaWidget().mount('#sakana-widget');
+  }
 }
