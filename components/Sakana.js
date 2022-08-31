@@ -5,6 +5,6 @@ import BLOG from '@/blog.config'
  */
 function initSakana() {
   let sakana = document.createElement('script')
-  sakana.src = BLOG.SAKANAWIDGET_LINK
+  sakana.src = BLOG.SAKANA_LINK
   document.head.appendChild(sakana)
 }
