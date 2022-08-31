@@ -55,6 +55,9 @@ export default function SideRight(props) {
 
       {BLOG.COMMENT_WALINE_SERVER_URL && BLOG.COMMENT_WALINE_RECENT && <HexoRecentComments/>}
 
+      <div id="sakana-widget">
+      </div>
+       
       <div className='sticky top-20'>
         {post && post.toc && post.toc.length > 1 && <Card>
           <Catalog toc={post.toc} />
@@ -62,7 +65,6 @@ export default function SideRight(props) {
         {slot}
       </div>
        
-      <div id="sakana-widget"></div>
     </div>
   )
 }
