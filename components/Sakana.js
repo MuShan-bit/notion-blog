@@ -1,5 +1,4 @@
 import BLOG from '@/blog.config'
-import { loadExternalResource } from '@/lib/utils'
 
 export default function Sakana() {
   if (!BLOG.SAKANA_WIDGET) {
