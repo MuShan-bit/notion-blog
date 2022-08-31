@@ -9,14 +9,6 @@ import CONFIG_HEXO from '../config_hexo'
 import HexoRecentComments from './HexoRecentComments'
 import BLOG from '@/blog.config'
 
-// 石蒜 -> CDN导入
-function initSakanaWidget() {
-  new SakanaWidget().mount('#sakana-widget');
-}
-async
-onload="initSakanaWidget()"
-src="https://cdn.jsdelivr.net/npm/sakana-widget@2.2.1/lib/sakana.min.js"
-
 /**
  * Hexo主题右侧栏
  * @param {*} props
@@ -57,7 +49,16 @@ export default function SideRight(props) {
 
       <div id="sakana-widget">
       </div>
-       
+      <script>
+        function initSakanaWidget() {
+          new SakanaWidget().mount('.sakana-widget');
+        }
+      </script>
+      <script
+        async
+        onload="initSakanaWidget()"
+        src="https://cdn.jsdelivr.net/npm/sakana-widget@2.2.1/lib/sakana.min.js"
+      ></script>
       <div className='sticky top-20'>
         {post && post.toc && post.toc.length > 1 && <Card>
           <Catalog toc={post.toc} />
