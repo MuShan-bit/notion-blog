@@ -4,28 +4,6 @@ import { useGlobal } from '@/lib/global'
 import { loadExternalResource } from '@/lib/utils'
 import { useEffect } from 'react'
 
-export default function Live2D() {
-  if (!BLOG.WIDGET_PET || !JSON.parse(BLOG.WIDGET_PET)) {
-    return <></>
-  }
-  const { switchTheme } = useGlobal()
-
-  function handleClick() {
-    if (BLOG.WIDGET_PET_SWITCH_THEME) {
-      switchTheme()
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', initLive2D)
-    return () => {
-      window.removeEventListener('scroll', initLive2D)
-    }
-  }, [])
-
-  return <canvas id="live2d" className='cursor-pointer' width="280" height="250" onClick={handleClick} alt='切换主题' title='切换主题' />
-}
-
 /**
  * 加载宠物
  */
