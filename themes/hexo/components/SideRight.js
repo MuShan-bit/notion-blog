@@ -20,14 +20,6 @@ export default function SideRight(props) {
     currentTag, showCategory, showTag, slot
   } = props
   
-let sakana = document.createElement('script')
-sakana.src = 'https://cdn.jsdelivr.net/npm/sakana-widget@2.2.1/lib/sakana.min.js'
-document.head.appendChild(sakana)
-sakana.async
-sakana.onload = function(){
-    new SakanaWidget().mount('#sakana-widget');
-}
-  
   return (
     <div className={'space-y-4 lg:w-80 lg:pt-0 px-2 pt-4'}>
       <InfoCard {...props} />
